@@ -1,0 +1,68 @@
+I.	Instalar Git Bash:
+	A.	Bajar el instalador con el enlace "Downloads for Windows" desde:
+		>	https://git-scm.com/
+	B.	Chequear este video:
+		>	https://www.youtube.com/watch?v=albr1o7Z1nw
+	C.	Correr el instalador:
+		1.	Aceptar los términos de la licencia.
+		2.	Aceptar el directorio de instalación por defecto.
+		3.	Seleccionar la creación del ícono en el escritorio.
+		4.	Permitir crear una carpeta en el menú de inicio.
+		5.	Seleccionar "Use Git from Git Bash only".
+		6.	Seleccionar "Checkout Windows-style, commit Unix-style ...".
+		7.	Seleccionar "Use MinTTY ...".
+		8.	En las opciones extra dejar las opciones por defecto.
+	D.	Abrir Git Bash:
+		1.	Probar los comandos básicos:
+			>	Mostrar contenido de directorio: 'dir' or 'ls' or 'ls -la'
+			>	Directorio: 'cd C:' or 'cd /c', 'cd Program\ Files', 'cd ..', 
+			>	Crear un archivo de texto, 
+		2.	Configurar Bash:
+			>	Nombre: 'git config --global user.name "My Name"'
+			>	Email: 'git config --global user.email "email@server.com"'
+			>	Editor: 'git config --global core.editor editorName'
+			>	Chequear configuración: 'git config --list'
+II.	Uso de Git. Ref: https://git-scm.com/docs
+	A.	Obtener ayuda:
+		1.	Teclear: 'git help [comando]'
+		2.	Teclear: 'git [comando] --help'
+	B.	Clonar un repositorio desde 'Git Hub'
+		1.	Abrir en Chrome: 'https://github.com/franz-cr'.
+		2.	Seleccionar un repositorio, y cliquear en 'Clone or download'.
+		3.	Al lado del URL cliquear para copiar al portapapeles (memoria).
+		4.	Navegar a la carpeta base local para los proyectos de desarrollo.
+		4.	Clonar el repositorio localmente:
+			>	'git clone https://github.com/franz-cr/myRepository.git'
+			>	Git crea el repositorio como una subcarpeta de la carpeta base.
+	C.	Inicializar un repositorio:
+		1.	Navegar hasta la carpeta del proyecto a respaldar.	
+		2.	Teclear: 'git init'
+	D.	Estado del repositorio:
+		1.	git status
+	E.	Historial:
+		1.	git log --oneline
+	F.	Comandos:
+		>	file:///C:/Program%20Files/Git/mingw64/share/doc/git-doc/git-branch.html
+		>	git branch 
+	G.	Agregar archivos:
+		1.	git add -A (All, agrega todos los archivos y carpetas).
+	H.	Aplicar cambios al repositorio:
+		1.	git commit, 
+		2.	Git Commit Style Guide:
+			http://udacity.github.io/git-styleguide/
+	I.	Guardar versión en repositorio en la nube:
+		1.	git push -u origin master
+	J.	Crear un repositorio local, crear el primer commit y crear el respectivo 
+		repositorio en GitHub.
+		1.	Navegar a GitHub, luego autenticarse.
+		2.	Dar click en el '+' ubicado a la derecha del cintillo superior.
+		3.	Indicar el nombre el repositorio y aceptar.
+		4.	Abrir Git Bash, navegar a la carpeta con el repositorio a subir.
+		5.	Seguir las siguientes instrucciones para sincronizar.
+			echo "# JavaProjects" >> README.md
+			git init
+			git add README.md
+			git commit -m "first commit"
+			git remote add origin https://github.com/franz-cr/NombreRepositorio.git
+			git push -u origin master
+		6.	Ayuda: https://help.github.com/articles/creating-a-new-repository/

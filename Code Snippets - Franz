@@ -1,0 +1,84 @@
+
+I.	Adding a fragment to a class:
+	A.	Ayuda:
+		1.	https://developer.android.com/guide/components/fragments.html
+		2.	
+	B.	Crear la clase fragment:
+		1.	Agregar un nuevo recurso xml para la interfaz:
+			a.	Seleccionar la carpeta 'layout' dentro de 'res' y click-derecho.
+			b.	Seleccionar 'New...' y 'Laoyout resource file'.
+			c.	En la ventana emergente ingresar lo siguiente:
+				-	Nombre: Nombre del archivo (fragment_nombre).
+				-	Elemento base: 'FrameLayout'.
+				-	Fuente: 'main'.
+				-	Directorio: 'layout'.
+			d.	Incluir en la interfaz los controles ('Views') necesarios.
+			e.	Especificar los atributos mínimos para cada control.
+		2.	Agregar una nueva clase al proyecto:
+			a.	Seleccionar la carpeta 'App' y click-derecho,
+			b.	Seleccionar 'New...' y 'Class'.
+			c.	En la ventana emergente ingresar lo siguiente:
+				-	Nombre: Nombre de la clase
+				-	Tipo: Clase
+				-	Superclase: Fragment (android.support.v4.app.Fragment)
+				-	Interfaz: Ninguno
+				-	Seleccionar que se muestren los métodos a sustituir.
+					>	Override al contructor.
+					>	Override al método 'onCreateView'.
+				- 	Resto dejarlo tal cual.
+				-	Aceptar (OK).
+			d.	Enlazar la clase con su interfaz en el método 'onCreateView':
+	/*******************************************************************
+	public View onCreateView(...) {...
+		// Inflate the layout for this fragment
+		// FRZ: Create own view having the fragment in it.
+		View movieFragmentView = inflater.inflate(
+			R.layout.fragment_movie_list,
+			container,
+			false);
+		return movieFragmentView;
+		}
+	*******************************************************************/
+II.	Agregar una acción de compartir, 'ShareActionButton'.
+III. Abrir un 'Intent' desde otro 'Intent', abrir una interfaz desde otra y mantenerla como pariente, ícono '<'.
+IV.	Crear una interfaz y funcionalidad para preferencias (SharedPreferences). Además los métodos para obtener las preferencia del usuario.
+V.	Manejo de contenedores de contenido:
+	A.	Adaptadores de contenido:
+		1.	Ayuda:
+			https://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews
+		2.	ListView: Adaptador, declaración y llenado; Control de listas, declaración y enlace al adaptador.
+	/*******************************************************************
+	//Variable global de clase
+	protected ArrayAdapter<String> adpListItems;
+	protected ListView myListView;
+
+	public View onCreateView(...) {...
+		// OPC1: Create dummy data for the list.
+		String[] strListData = {"dt1", "dt2", ...};
+		List<String> weekForecast = new ArrayList<String>(Arrays.asList(data));
+		mForecastAdapter = new ArrayAdapter<String>(
+			getActivity(), // or getContext(),
+	        R.layout.list_item_forecast, 
+	        R.id.list_item_forecast_textview, 
+	        weekForecast);
+
+		// OPC2: Declare and load the 'ArrayAdapter'
+		ImageAdapter adpGridItems = new ImageAdapter(getContext());
+		adpListItems = new ArrayAdapter<String>(
+			getContext(),
+			R.layout.list_item_movie,
+			adpGridItems.strListItems);
+
+		// FRZ: Get a handle to the ListView and attach the adapter.
+		moviesListView = (ListView) movieFragmentView.findViewById(
+			R.id.lvwPopularMovies);
+		moviesListView.setAdapter(adpListItems);
+		...
+		}
+	*******************************************************************/
+		2.	Enlazar el adaptador a un control:
+			ListView listView = (ListView) findViewById(R.id.listview);
+			listView.setAdapter(adapter);
+	B.	Listas, 'ListView'.
+	B.	Grillas, 'GridView'.
+	C.	'ScrollView'.
