@@ -28,6 +28,7 @@ I.	Instalar Git Bash:
 			>	Email: 'git config --global user.email "email@server.com"'
 			>	Editor: 'git config --global core.editor editorName'
 			>	Chequear configuración: 'git config --list'
+			>	La lista completa de configuraciones está al final de este archivo.
 II.	Uso de Git. Ref: https://git-scm.com/docs
 	A.	Obtener ayuda:
 		1.	Teclear: 'git help [comando]'
@@ -140,3 +141,38 @@ III. Pasos para sincronizar un repositorio local con uno en GitHub ya existente
 			91	exit
 git commit -m "Feat: Latest changes to project as of 20200214"
 IV.	
+
+NOTAS:
+	Valores de la configuración de Git al 20200312:
+		$ git config --list
+			core.symlinks=false
+			core.autocrlf=true
+			core.fscache=true
+			color.diff=auto
+			color.status=auto
+			color.branch=auto
+			color.interactive=true
+			help.format=html
+			http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+			diff.astextplain.textconv=astextplain
+			rebase.autosquash=true
+			filter.lfs.clean=git-lfs clean -- %f
+			filter.lfs.smudge=git-lfs smudge -- %f
+			filter.lfs.required=true
+			credential.helper=manager
+			user.name=Franz J. Ulrich
+			user.email=franz.ulrich.cr@gmail.com
+			core.editor='C:\Program Files (x86)\Sublime Text 3\sublime_text.exe' -w
+			gui.recentrepo=C:/Users/ulrichca/JavaProjects/GameOfLife-Conway
+			gui.recentrepo=C:/Users/ulrichca/JavaProjects/Udacity - Intro to Java Programming
+			gui.recentrepo=C:/Users/ulrichca/Documents/Jupyter_Projects
+			core.repositoryformatversion=0
+			core.filemode=false
+			core.bare=false
+			core.logallrefupdates=true
+			core.symlinks=false
+			core.ignorecase=true
+			remote.origin.url=https://github.com/franz-cr/My_Programming_Docs.git
+			remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+			branch.master.remote=origin
+			branch.master.merge=refs/heads/master
