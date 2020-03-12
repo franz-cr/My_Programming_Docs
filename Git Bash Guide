@@ -12,12 +12,18 @@ I.	Instalar Git Bash:
 		6.	Seleccionar "Checkout Windows-style, commit Unix-style ...".
 		7.	Seleccionar "Use MinTTY ...".
 		8.	En las opciones extra dejar las opciones por defecto.
-	D.	Abrir Git Bash:
+	D.	Abrir Bash:
 		1.	Probar los comandos básicos:
+			>	Mostrar el directorio activo completo: 'pwd'
 			>	Mostrar contenido de directorio: 'dir' or 'ls' or 'ls -la'
-			>	Directorio: 'cd C:' or 'cd /c', 'cd Program\ Files', 'cd ..', 
+			>	Cambiar directorio: 'cd C:' o 'cd /c', 'cd Program\ Files', 
+			>	Subir 1 nivel de directorio: 'cd ..', 
+			>	Crear una carpeta 'mkdir [nombre_carpeta]'
 			>	Crear un archivo de texto, 
-		2.	Configurar Bash:
+			>	Desplegar el histórico de commandos tecleados: 'history'.
+
+			>	Salir de bash y cerrar command prompt: 'exit'.
+		2.	Configurar Git desde el Bash:
 			>	Nombre: 'git config --global user.name "My Name"'
 			>	Email: 'git config --global user.email "email@server.com"'
 			>	Editor: 'git config --global core.editor editorName'
@@ -41,18 +47,31 @@ II.	Uso de Git. Ref: https://git-scm.com/docs
 		1.	git status
 	E.	Historial:
 		1.	git log --oneline
+		2.	git log --graph --all
 	F.	Comandos:
 		>	file:///C:/Program%20Files/Git/mingw64/share/doc/git-doc/git-branch.html
 		>	git branch 
 	G.	Agregar archivos:
 		1.	git add -A (All, agrega todos los archivos y carpetas).
+		2.	git add -u :/ 
+			// adds all modified file changes to the stage 
+			git add * :/ 
+			// adds modified and any new files (that's not gitignore'ed) to the stage
 	H.	Aplicar cambios al repositorio:
 		1.	git commit, 
 		2.	Git Commit Style Guide:
 			http://udacity.github.io/git-styleguide/
 	I.	Guardar versión en repositorio en la nube:
 		1.	git push -u origin master
-	J.	Crear un repositorio local, crear el primer commit y crear el respectivo 
+	J.	Verificar configuración de un repositorio local:
+		1.	Navegar hasta la carpeta del repositorio local con 'cd (...)'.
+		2.	Verificar que el repositorio este inicializado, con 'dir'.
+			Se debe ver una carpeta '.git'
+		3.	Usar el comando 'git remote' para verificar configuración.
+			La ayuda con el comando se despliega con 'git help remote'.
+				git remote show
+				git remote get-url --all origin
+	H.	Crear un repositorio local, crear el primer commit y crear el respectivo 
 		repositorio en GitHub.
 		1.	Navegar a GitHub, luego autenticarse.
 		2.	Dar click en el '+' ubicado a la derecha del cintillo superior.
@@ -66,3 +85,58 @@ II.	Uso de Git. Ref: https://git-scm.com/docs
 			git remote add origin https://github.com/franz-cr/NombreRepositorio.git
 			git push -u origin master
 		6.	Ayuda: https://help.github.com/articles/creating-a-new-repository/
+		7.  Ayuda: https://guides.github.com/introduction/git-handbook/#basic-git
+				# create a new directory, and initialize it with git-specific functions
+				git init my-repo
+
+				# change into the `my-repo` directory
+				cd my-repo
+
+				# create the first file in the project
+				touch README.md
+
+				# git isn't aware of the file, stage it
+				git add README.md
+
+				# take a snapshot of the staging area
+				git commit -m "add README to initial commit"
+
+				# provide the path for the repository you created on github
+				git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+ 
+				# push changes to github
+				git push --set-upstream origin master
+III. Pasos para sincronizar un repositorio local con uno en GitHub ya existente
+	1.	Desde "Git Bash" navegar a la carpeta.
+	2.	Verificar el estado de los archivos en el repositorio con 'git status'.
+		a.	Si retorna el mensaje 'Your branch is up-to-date with 'origin/master''.
+			No hay más que hacer y se puede proceder a sincronizar los 'commits'.
+		b.	Si retorna una lista de archivos en color rojo se deben incluir al 
+			'stage' del 'commit' con 'git add -u :/'. 
+		c.	Ejecutar un status nuevamente, la lista debe ser verde ahora.
+	3.	Comprometer archivos a sincronizar
+		a.	git commit -m "Tema: Mensaje descriptivo del commit"
+	3.	Verificar que el repositorio local tenga uno remoto.
+		a.	Mediante 'git remote show' obtener el nombre del 'path' o ruta.
+		b.	Mediante 'git remote get-url origin' obtener el enlace al repositorio remoto.
+		b.	Si no retorna enlace alguno es necesario agregar un enlace a un repositorio remoto.
+			> Obtener enlace desde Github sea usando un reporsitorio ya existente o creando uno nuevo.
+	4.	Sincronizar los 'commits' con el repositorio remoto.
+		a.	git push -u origin master
+	5.	Ejemplo de los comandos usados:
+			79	git status
+			80	git add The_Complete_Python_Data_Visualization_Course/data-viz/bokeh/Data_Visualization_Charts_bokeh_lib.ipynb
+			81	git add The_Complete_Python_Data_Visualization_Course/data-viz/bokeh/log_lines.html
+			82	git add The_Complete_Python_Data_Visualization_Course/.ipynb_checkpoints/
+			83	git add The_Complete_Python_Data_Visualization_Course/Notebook_Tutorial.ipynb
+			86	git log
+			84	git commit -m "Features: New Jupyter notebooks added and renamed notebooks"
+			84	git remote add origin https://github.com/franz-cr/Udacity-Intro_to_Java_Programming.git
+			85	git status
+			87	git remote status
+			88	git push -u origin master
+			89	git remote add origin https://github.com/franz-cr/Udacity-Intro_to_Java_Programming.git
+			90	git push -u origin master
+			91	exit
+git commit -m "Feat: Latest changes to project as of 20200214"
+IV.	
