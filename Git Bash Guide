@@ -29,7 +29,7 @@ I.	Instalar Git Bash:
 			>	Editor: 'git config --global core.editor editorName'
 			>	Chequear configuración: 'git config --list'
 			>	La lista completa de configuraciones está al final de este archivo.
-II.	Uso de Git. Ref: https://git-scm.com/docs
+II.	Uso de Git. Ref: https://git-scm.com/docs o en español: https://help.github.com/es/github
 	A.	Obtener ayuda:
 		1.	Teclear: 'git help [comando]'
 		2.	Teclear: 'git [comando] --help'
@@ -59,10 +59,15 @@ II.	Uso de Git. Ref: https://git-scm.com/docs
 			git add * :/ 
 			// adds modified and any new files (that's not gitignore'ed) to the stage
 	H.	Aplicar cambios al repositorio:
-		1.	git commit, 
+		1.	git commit -a, 
 		2.	Git Commit Style Guide:
 			http://udacity.github.io/git-styleguide/
-	I.	Guardar versión en repositorio en la nube:
+		3.	Se abre 'Sublime Text' automáticamente:
+			>	Agregar la nota del commit usando el formato de Udacity
+			>	Guardar el archivo ('Save')
+			>	Cerrar la pestaña en 'Sublime'
+			>	El commit continúa en Git Bash
+	I.	Subir cambios al repositorio en la nube:
 		1.	git push -u origin master
 	J.	Verificar configuración de un repositorio local:
 		1.	Navegar hasta la carpeta del repositorio local con 'cd (...)'.
